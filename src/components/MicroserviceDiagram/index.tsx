@@ -13,13 +13,7 @@ import '@xyflow/react/dist/style.css';
 import styles from './styles.module.css';
 import FloatingEdge from './FloatingEdge';
 
-import type {
-  Node,
-  Edge,
-  OnNodesChange,
-  OnEdgesChange,
-  OnConnect,
-} from '@xyflow/react';
+import type { Node, Edge, OnNodesChange, OnEdgesChange, OnConnect } from '@xyflow/react';
 
 const edgeTypes = {
   floating: FloatingEdge,
@@ -253,17 +247,17 @@ export default function MicroserviceDiagram() {
 
   const onNodesChange: OnNodesChange = useCallback(
     changes => setNodes(nds => applyNodeChanges(changes, nds)),
-    []
+    [],
   );
 
   const onEdgesChange: OnEdgesChange = useCallback(
     changes => setEdges(eds => applyEdgeChanges(changes, eds)),
-    []
+    [],
   );
 
   const onConnect: OnConnect = useCallback(
     connection => setEdges(eds => addEdge(connection, eds)),
-    []
+    [],
   );
 
   return (

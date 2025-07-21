@@ -18,10 +18,7 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
+          <Link className="button button--secondary button--lg" to="/docs/intro">
             Get Started
           </Link>
         </div>
@@ -33,10 +30,7 @@ function HomepageHeader() {
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`${siteConfig.title}`}
-      description="Small Turtle House documentation site"
-    >
+    <Layout title={`${siteConfig.title}`} description="Small Turtle House documentation site">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

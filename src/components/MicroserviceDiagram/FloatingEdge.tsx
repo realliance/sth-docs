@@ -39,10 +39,7 @@ function FloatingEdge({
     return null;
   }
 
-  const { sx, sy, tx, ty, sourcePos, targetPos } = getEdgeParams(
-    sourceNode,
-    targetNode
-  );
+  const { sx, sy, tx, ty, sourcePos, targetPos } = getEdgeParams(sourceNode, targetNode);
 
   // Apply offsets to create parallel edges
   const offsetSx = sx;
@@ -66,9 +63,7 @@ function FloatingEdge({
         path={edgePath}
         markerEnd={markerEnd}
         style={style}
-        className={
-          animated ? 'react-flow__edge-path animated' : 'react-flow__edge-path'
-        }
+        className={animated ? 'react-flow__edge-path animated' : 'react-flow__edge-path'}
       />
       {label && (
         <EdgeLabelRenderer>

@@ -6,20 +6,14 @@ interface IntersectionPoint {
 }
 
 // Returns the position (top,right,bottom or left) passed node compared to the other node
-function getNodePosition(
-  node: Node,
-  intersectionPoint: IntersectionPoint
-): Position {
+function getNodePosition(node: Node, intersectionPoint: IntersectionPoint): Position {
   const { positionAbsolute } = node.internals;
   const nodeCenter = {
     x: positionAbsolute.x + node.measured.width / 2,
     y: positionAbsolute.y + node.measured.height / 2,
   };
 
-  const angle = Math.atan2(
-    intersectionPoint.y - nodeCenter.y,
-    intersectionPoint.x - nodeCenter.x
-  );
+  const angle = Math.atan2(intersectionPoint.y - nodeCenter.y, intersectionPoint.x - nodeCenter.x);
 
   const absAngle = Math.abs(angle);
   const PI_4 = Math.PI / 4;
@@ -34,10 +28,7 @@ function getNodePosition(
 }
 
 // Returns the intersection point of the line between the center of the intersectionNode and the target node
-function getNodeIntersection(
-  intersectionNode: Node,
-  targetNode: Node
-): IntersectionPoint {
+function getNodeIntersection(intersectionNode: Node, targetNode: Node): IntersectionPoint {
   const {
     measured: { width: intersectionNodeWidth, height: intersectionNodeHeight },
     internals: { positionAbsolute: intersectionNodePosition },
