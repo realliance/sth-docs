@@ -25,7 +25,6 @@
   animation: dashdraw 0.5s linear infinite;
 }
 
-
 @keyframes dashdraw {
   to {
     stroke-dashoffset: -10;

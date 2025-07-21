@@ -1,5 +1,11 @@
 import React from 'react';
-import { getBezierPath, useInternalNode, EdgeProps, EdgeLabelRenderer, BaseEdge } from '@xyflow/react';
+import {
+  getBezierPath,
+  useInternalNode,
+  EdgeProps,
+  EdgeLabelRenderer,
+  BaseEdge,
+} from '@xyflow/react';
 import { getEdgeParams } from './edgeUtils';
 
 interface FloatingEdgeProps extends EdgeProps {
@@ -14,7 +20,16 @@ interface FloatingEdgeProps extends EdgeProps {
   endOffset?: number;
 }
 
-function FloatingEdge({ id, source, target, markerEnd, style, label, animated, data }: FloatingEdgeProps) {
+function FloatingEdge({
+  id,
+  source,
+  target,
+  markerEnd,
+  style,
+  label,
+  animated,
+  data,
+}: FloatingEdgeProps) {
   const startOffset = (data?.startOffset as number) || 0;
   const endOffset = (data?.endOffset as number) || 0;
   const sourceNode = useInternalNode(source);
@@ -26,7 +41,7 @@ function FloatingEdge({ id, source, target, markerEnd, style, label, animated, d
 
   const { sx, sy, tx, ty, sourcePos, targetPos } = getEdgeParams(
     sourceNode,
-    targetNode,
+    targetNode
   );
 
   // Apply offsets to create parallel edges
@@ -51,7 +66,9 @@ function FloatingEdge({ id, source, target, markerEnd, style, label, animated, d
         path={edgePath}
         markerEnd={markerEnd}
         style={style}
-        className={animated ? 'react-flow__edge-path animated' : 'react-flow__edge-path'}
+        className={
+          animated ? 'react-flow__edge-path animated' : 'react-flow__edge-path'
+        }
       />
       {label && (
         <EdgeLabelRenderer>
